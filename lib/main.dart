@@ -5,12 +5,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  var questionIdex = 0;
+class _MyAppState extends State<MyApp> {
+  var _questionIdex = 0;
 
   void aswerdQuestion() {
     /*
@@ -18,9 +18,9 @@ class MyAppState extends State<MyApp> {
     to update the UI by using the method setState(), like
     */
     setState(() {
-      questionIdex += 1;
+      _questionIdex += 1;
     });
-    print(questionIdex);
+    print(_questionIdex);
   }
 
   @override
@@ -36,7 +36,7 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(questions[questionIdex]),
+            Text(questions[_questionIdex]),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: () => aswerdQuestion(),
